@@ -1,4 +1,4 @@
-cpnfotehwin VIM config, py.stephane1(at)gmail.com - http://imspy.fr
+Highco VIM config, py.stephane1(at)gmail.com
 ==================================================================
 
 Using pathogen plugin (to set unobstrusive plugins)
@@ -34,16 +34,18 @@ Plugin list:
 
 # To install
 
+    One Shot:
+
+    wget --no-check-certificate https://raw.github.com/BLEUROY-HIGHCO/vim-config/master/install.sh -O - | sh
+
+    Or
+
     git clone git://github.com/BLEUROY-HIGHCO/vim-config.git
     cd vim-config && git submodule init && git submodule update
-    git submodule foreach git checkout master && git submodule foreach git pull
-    mv vim-config/.vim ~/.vim
-    # Be sure you backup your .vimrc and .gvimrc (copy them by using cmd "cp ~/.vimrc ~/.vimrc.backup && cp ~/.gvimrc ~/.gvimrc.backup ")
-    echo "source ~/.vim/.vimrc" > ~/.vimrc
-    echo "source ~/.vim/.gvimrc" > ~/.gvimrc
+    ln -s vim-config/.vim ~/.vim
+    ln -s vim-config/.vim/.vimrc ~/.vimrc
 
 # Keep submodules updated
-
 
     git submodule foreach git pull .
 
@@ -58,7 +60,6 @@ Shortcuts:
 
 - CTRL + C             -> to comment line(s) selected
 - CTRL + X             -> to uncomment line(s) selected
-- CTRL + T             -> Command-T
 - CTRL + Y             -> Open NerdTree nafication
 - CTRL + F             -> Ack (search on project)
 - CTRL + P             -> document a method, class, var
