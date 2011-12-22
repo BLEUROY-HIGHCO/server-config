@@ -170,6 +170,4 @@ export GIT_EDITOR="$vim"
 
 # Add git and svn branch names
 export PS1="$PS1\$(parse_git_branch)\$(parse_svn_branch) "
-MACHINE_ENV="\[\033[1;31m\][PROD]\[\033[0m\]";
-#MACHINE_ENV="\[\033[1;32m\][RECETTE]\[\033[0m\]";
 export PS1="$PS1$MACHINE_ENV "
