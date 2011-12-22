@@ -83,4 +83,5 @@ echo -e "\033[0;32m"'     \/  /_____/      \/     \/             \/     \/     \
 
 echo -e "\n\n \033[0;32m BASH ...is now installed.\033[0m"
 
-source $HOME/.bashrc
+source $HOME/.bashrc && \
+bash
