@@ -1,0 +1,3 @@
+MACHINE_ENV="\[\033[1;32m\][RECETTE]\[\033[0m\]";
+
+source .bashrc_base
