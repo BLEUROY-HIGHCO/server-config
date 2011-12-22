@@ -34,7 +34,7 @@ then
     echo 'server-config file already exists, delete it ? (y/n)' && read response
     if [ "$response" == "y" ]
     then
-        rm $HOME/server-config
+        rm -rf $HOME/server-config
     else
         exit
     fi
@@ -64,12 +64,11 @@ echo -e "\033[0;32m"'     \/  /_____/      \/     \/                       \/  '
 echo -e "\n\n \033[0;32m....is now installed.\033[0m"
 
 echo 'Prod ou recette (p/r)' && read response
-
-if [ $response == "p" ]
+if [ "$response" == "p" ]
 then
     ln -s $HOME/server-config/bash/.bashrc_prod $HOME/.bashrc
 else
-if [ $response == "r" ]
+if [ "$response" == "r" ]
 then
     ln -s $HOME/server-config/bash/.bashrc_recette $HOME/.bashrc
 fi
