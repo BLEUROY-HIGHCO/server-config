@@ -1,6 +1,6 @@
 if [ -d $HOME/.vim ] || [ -h $HOME/.vim ]
 then
-    echo '.vim file already exists, delete it ? (y/n)' && read response
+    echo '.vim file already exists, delete it ? (y/n)' && read response && \
     if [ "$response" == "y" ]
     then
         rm -rf $HOME/.vim
@@ -11,7 +11,7 @@ fi
 
 if [ -f $HOME/.vimrc ] || [ -h $HOME/.vimrc ]
 then
-    echo '.vimrc file already exists, delete it ? (y/n)' && read response
+    echo '.vimrc file already exists, delete it ? (y/n)' && read response && \
     if [ "$response" == "y" ]
     then
         rm $HOME/.vimrc
@@ -22,7 +22,7 @@ fi
 
 if [ -f $HOME/.bashrc ] || [ -h $HOME/.bashrc ]
 then
-    echo '.bashrc file already exists, delete it ? (y/n)' && read response
+    echo '.bashrc file already exists, delete it ? (y/n)' && read response && \
     if [ "$response" == "y" ]
     then
         rm $HOME/.bashrc
@@ -31,7 +31,7 @@ fi
 
 if [ -d $HOME/server-config ]
 then
-    echo 'server-config file already exists, delete it ? (y/n)' && read response
+    echo 'server-config file already exists, delete it ? (y/n)' && read response && \
     if [ "$response" == "y" ]
     then
         rm -rf $HOME/server-config
@@ -41,11 +41,11 @@ then
 fi
 
 
-echo "\033[0;34mCloning Vim config\033[0m"
+echo -e "\033[0;34mCloning Vim config\033[0m"
 
 /usr/bin/env git clone https://github.com/BLEUROY-HIGHCO/server-config.git $HOME/server-config
 
-echo "\033[0;34mUpdate submodules\033[0m"
+echo -e "\033[0;34mUpdate submodules\033[0m"
 
 cd $HOME/server-config
 git submodule init
@@ -63,7 +63,7 @@ echo -e "\033[0;32m"'     \/  /_____/      \/     \/                       \/  '
 
 echo -e "\n\n \033[0;32m....is now installed.\033[0m"
 
-echo 'Prod ou recette (p/r)' && read response;
+echo 'Prod ou recette (p/r)' && read response && \
 if [ "$response" == "p" ]
 then
     ln -s $HOME/server-config/bash/.bashrc_prod $HOME/.bashrc
