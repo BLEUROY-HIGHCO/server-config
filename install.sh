@@ -63,7 +63,7 @@ echo -e "\033[0;32m"'     \/  /_____/      \/     \/                       \/  '
 
 echo -e "\n\n \033[0;32m....is now installed.\033[0m"
 
-echo 'Prod ou recette (p/r)' && read response
+echo 'Prod ou recette (p/r)' && read response;
 if [ "$response" == "p" ]
 then
     ln -s $HOME/server-config/bash/.bashrc_prod $HOME/.bashrc
