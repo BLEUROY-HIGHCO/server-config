@@ -21,7 +21,6 @@ Plugin list:
 - [snipMate][snipMate]                   => As on textmate, easily add shortcut to create snippets
 - [supertab][supertab]                   => Some function for <tab>
 - [symfony][symfony]                     => Shortcuts for symfony 1 shell
-- [taglist][taglist]
 - [vim-colors-solarized][vim-colors-solarized] => Vim theme
 - [vim-cucumber][vim-cucumber]           => syntax highlighting
 - [vim-fugitive][vim-fugitive]           => git tools
@@ -87,7 +86,6 @@ Shortcuts:
 [ragtag]: http://www.vim.org/scripts/script.php?script_id=1896
 [snipMate]: http://www.vim.org/scripts/script.php?script_id=2540
 [supertab]: http://www.vim.org/scripts/script.php?script_id=1643
-[taglist]: http://www.vim.org/scripts/script.php?script_id=273
 [vim-colors-solarized]: https://github.com/altercation/vim-colors-solarized
 [vim-cucumber]: https://github.com/tpope/vim-cucumber
 [vim-fugitive]: http://www.vim.org/scripts/script.php?script_id=2975
