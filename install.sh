@@ -1,7 +1,7 @@
 if [ -d $HOME/.vim ] || [ -h $HOME/.vim ]
 then
     echo '.vim file already exists, delete it ? (y/n)' && read response
-    if [ $response == "y" ]
+    if [ "$response" == "y" ]
     then
         rm $HOME/.vim
     else
@@ -12,7 +12,7 @@ fi
 if [ -f $HOME/.vimrc ] || [ -h $HOME/.vimrc ]
 then
     echo '.vimrc file already exists, delete it ? (y/n)' && read response
-    if [ $response == "y" ]
+    if [ "$response" == "y" ]
     then
         rm $HOME/.vimrc
     else
@@ -23,7 +23,7 @@ fi
 if [ -f $HOME/.bashrc ] || [ -h $HOME/.bashrc ]
 then
     echo '.bashrc file already exists, delete it ? (y/n)' && read response
-    if [ $response == "y" ]
+    if [ "$response" == "y" ]
     then
         rm $HOME/.bashrc
     fi
@@ -32,7 +32,7 @@ fi
 if [ -d $HOME/server-config ]
 then
     echo 'server-config file already exists, delete it ? (y/n)' && read response
-    if [ $response == "y" ]
+    if [ "$response" == "y" ]
     then
         rm $HOME/server-config
     else
