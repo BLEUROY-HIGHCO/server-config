@@ -43,7 +43,7 @@ fi
 
 echo -e "\033[0;34mCloning Vim config\033[0m"
 
-/usr/bin/env git clone https://github.com/BLEUROY-HIGHCO/server-config.git $HOME/server-config
+/usr/bin/env git clone git@github.com:BLEUROY-HIGHCO/server-config.git $HOME/server-config
 
 echo -e "\033[0;34mUpdate submodules\033[0m"
 
