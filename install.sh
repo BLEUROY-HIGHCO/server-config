@@ -2,7 +2,7 @@
 if [ -d $HOME/.vim ] || [ -h $HOME/.vim ]
 then
     echo '.vim file already exists, delete it ? (y/n)' && read reponse
-    if [ "$reponse" == "y" ]
+    if [ $reponse == "y" ]
     then
         rm $HOME/.vim
     else
@@ -13,7 +13,7 @@ fi
 if [ -f $HOME/.vimrc ] || [ -h $HOME/.vimrc ]
 then
     echo '.vimrc file already exists, delete it ? (y/n)' && read reponse
-    if [ "$reponse" == "y" ]
+    if [ $reponse == "y" ]
     then
         rm $HOME/.vimrc
     else
@@ -24,7 +24,7 @@ fi
 if [ -f $HOME/.bashrc ] || [ -h $HOME/.bashrc ]
 then
     echo '.bashrc file already exists, delete it ? (y/n)' && read reponse
-    if [ "$reponse" == "y" ]
+    if [ $reponse == "y" ]
     then
         rm $HOME/.bashrc
     fi
@@ -33,7 +33,7 @@ fi
 if [ -d $HOME/server-config ]
 then
     echo 'server-config file already exists, delete it ? (y/n)' && read reponse
-    if [ "$reponse" == "y" ]
+    if [ $reponse == "y" ]
     then
         rm $HOME/server-config
     else
@@ -67,11 +67,11 @@ echo "\n\n \033[0;32m....is now installed.\033[0m"
 
 echo 'Prod ou recette (p/r)' && read reponse
 
-if [ "$reponse" == "p" ]
+if [ $reponse == "p" ]
 then
     ln -s $HOME/server-config/bash/.bashrc_prod $HOME/.bashrc
 else
-if [ "$reponse" == "r" ]
+if [ $reponse == "r" ]
 then
     ln -s $HOME/server-config/bash/.bashrc_recette $HOME/.bashrc
 fi
