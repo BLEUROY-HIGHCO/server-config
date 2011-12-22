@@ -35,7 +35,7 @@ Plugin list:
 
     One Shot:
 
-    wget --no-check-certificate https://raw.github.com/BLEUROY-HIGHCO/server-config/master/install.sh -O - | sh
+    wget --no-check-certificate https://raw.github.com/BLEUROY-HIGHCO/server-config/master/install.sh -O ./install.sh && chmod +x ./install.sh && ./install.sh
 
     Or
 
