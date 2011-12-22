@@ -3,7 +3,7 @@ then
     echo '.vim file already exists, delete it ? (y/n)' && read response
     if [ "$response" == "y" ]
     then
-        rm $HOME/.vim
+        rm -rf $HOME/.vim
     else
         exit
     fi
