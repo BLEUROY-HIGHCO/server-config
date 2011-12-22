@@ -1,10 +1,10 @@
-if [ -d $HOME/.vim ] || [ -h $HOME/.vim]
+if [ -d $HOME/.vim ] || [ -h $HOME/.vim ]
 then
       echo "\033[0;33mYou already have a .vim dir installed.\033[0m You'll need to remove .vim if you want to install"
     exit
 fi
 
-if [ -f $HOME/.vimrc ] || [ -h $HOME/.vimrc]
+if [ -f $HOME/.vimrc ] || [ -h $HOME/.vimrc ]
 then
       echo "\033[0;33mYou already have a .vimrc installed.\033[0m You'll need to remove .vimrc if you want to install"
     exit
