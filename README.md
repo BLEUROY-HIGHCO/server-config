@@ -1,9 +1,11 @@
-Highco VIM config, py.stephane1(at)gmail.com
-==================================================================
+Highco Server config
+====================
+
+# Vim
 
 Using pathogen plugin (to set unobstrusive plugins)
 
-Plugin list:
+## Plugin list:
 
 - [Align][align]                         => Alignments of code
 - [bufexplorer][bufexplorer]             => Explorer of buffer
@@ -31,6 +33,32 @@ Plugin list:
 - [vim-unimpaired][vim-unimpaired]       => Pairs of handy bracket mappings
 - [zencoding-vim][zencoding-vim]         => Zencoding for vim
 
+## Config useful
+
+    let g:php_path="/Applications/MAMP/bin/php5.3/bin/php"         " used by symfony1 bundle to get great php to call symfony1 commands
+    let g:pdv_cfg_Author="Stephane PY <py.stephane1(at)gmail.com>" " change the authorname for phpdoc
+    let g:NERDTreeShowHidden=1                                     " show hidden files on nerdtree
+
+    coloscheme symfony
+
+##Shortcuts:
+
+- CTRL + C             -> to comment line(s) selected
+- CTRL + X             -> to uncomment line(s) selected
+- CTRL + Y             -> Open NerdTree nafication
+- CTRL + F             -> Ack (search on project)
+- CTRL + P             -> document a method, class, var
+- CTRL + K             -> Launch php code sniffer
+- CTRL + W then (key)  -> Align lines on key, check on AlignPlugin
+- CTRL + H             -> Adding namespace of a file and the class name (php 5.3)
+- F5                   -> Seeing buffer explorer
+- \s (symfony command) -> symfony1
+- :Symfony *command*   -> symfony1
+
+# Bash
+
+@todo Write documentation
+
 # To install
 
     One Shot:
@@ -48,27 +76,6 @@ Plugin list:
 # Keep submodules updated
 
     git submodule foreach git pull .
-
-# Config useful
-    let g:php_path="/Applications/MAMP/bin/php5.3/bin/php"         " used by symfony1 bundle to get great php to call symfony1 commands
-    let g:pdv_cfg_Author="Stephane PY <py.stephane1(at)gmail.com>" " change the authorname for phpdoc
-    let g:NERDTreeShowHidden=1                                     " show hidden files on nerdtree
-
-    coloscheme symfony
-
-Shortcuts:
-
-- CTRL + C             -> to comment line(s) selected
-- CTRL + X             -> to uncomment line(s) selected
-- CTRL + Y             -> Open NerdTree nafication
-- CTRL + F             -> Ack (search on project)
-- CTRL + P             -> document a method, class, var
-- CTRL + K             -> Launch php code sniffer
-- CTRL + W then (key)  -> Align lines on key, check on AlignPlugin
-- CTRL + H             -> Adding namespace of a file and the class name (php 5.3)
-- F5                   -> Seeing buffer explorer
-- \s (symfony command) -> symfony1
-- :Symfony *command*   -> symfony1
 
 [pathogen]: http://www.vim.org/scripts/script.php?script_id=2332
 [align]: http://www.vim.org/scripts/script.php?script_id=294
