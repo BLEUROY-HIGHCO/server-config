@@ -35,14 +35,15 @@ Plugin list:
 
     One Shot:
 
-    wget --no-check-certificate https://raw.github.com/BLEUROY-HIGHCO/vim-config/master/install.sh -O - | sh
+    wget --no-check-certificate https://raw.github.com/BLEUROY-HIGHCO/server-config/master/install.sh -O - | sh
 
     Or
 
-    git clone git://github.com/BLEUROY-HIGHCO/vim-config.git
-    cd vim-config && git submodule init && git submodule update
-    ln -s vim-config/.vim ~/.vim
-    ln -s vim-config/.vim/.vimrc ~/.vimrc
+    git clone git://github.com/BLEUROY-HIGHCO/server-config.git
+    cd server-config && git submodule init && git submodule update
+    ln -s server-config/.vim ~/.vim
+    ln -s server-config/.vim/.vimrc ~/.vimrc
+    ln -s server-config/bash/.bashrc_**recette or prod** ~/.bashrc
 
 # Keep submodules updated
 
