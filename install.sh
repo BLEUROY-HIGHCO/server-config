@@ -1,8 +1,7 @@
-
 if [ -d $HOME/.vim ] || [ -h $HOME/.vim ]
 then
-    echo '.vim file already exists, delete it ? (y/n)' && read reponse
-    if [ $reponse == "y" ]
+    echo '.vim file already exists, delete it ? (y/n)' && read response
+    if [ $response == "y" ]
     then
         rm $HOME/.vim
     else
@@ -12,8 +11,8 @@ fi
 
 if [ -f $HOME/.vimrc ] || [ -h $HOME/.vimrc ]
 then
-    echo '.vimrc file already exists, delete it ? (y/n)' && read reponse
-    if [ $reponse == "y" ]
+    echo '.vimrc file already exists, delete it ? (y/n)' && read response
+    if [ $response == "y" ]
     then
         rm $HOME/.vimrc
     else
@@ -23,8 +22,8 @@ fi
 
 if [ -f $HOME/.bashrc ] || [ -h $HOME/.bashrc ]
 then
-    echo '.bashrc file already exists, delete it ? (y/n)' && read reponse
-    if [ $reponse == "y" ]
+    echo '.bashrc file already exists, delete it ? (y/n)' && read response
+    if [ $response == "y" ]
     then
         rm $HOME/.bashrc
     fi
@@ -32,8 +31,8 @@ fi
 
 if [ -d $HOME/server-config ]
 then
-    echo 'server-config file already exists, delete it ? (y/n)' && read reponse
-    if [ $reponse == "y" ]
+    echo 'server-config file already exists, delete it ? (y/n)' && read response
+    if [ $response == "y" ]
     then
         rm $HOME/server-config
     else
@@ -48,13 +47,12 @@ echo "\033[0;34mCloning Vim config\033[0m"
 
 echo "\033[0;34mUpdate submodules\033[0m"
 
-/usr/bin/env cd $HOME/server-config
-/usr/bin/env git submodule init
-/usr/bin/env git submodule update
+cd $HOME/server-config
+git submodule init
+git submodule update
 
-/usr/bin/env ln -s $HOME/server-config/.vim $HOME/.vim
-/usr/bin/env ln -s $HOME/.vim/.vimrc $HOME/.vimrc
-
+ln -s $HOME/server-config/.vim $HOME/.vim
+ln -s $HOME/.vim/.vimrc $HOME/.vimrc
 
 echo "\033[0;32m"'.__    .__       .__                         .__          '"\033[0m"
 echo "\033[0;32m"'|  |__ |__| ____ |  |__   ____  ____   ___  _|__| _____   '"\033[0m"
@@ -65,13 +63,13 @@ echo "\033[0;32m"'     \/  /_____/      \/     \/                       \/  '"\0
 
 echo "\n\n \033[0;32m....is now installed.\033[0m"
 
-echo 'Prod ou recette (p/r)' && read reponse
+echo 'Prod ou recette (p/r)' && read response
 
-if [ $reponse == "p" ]
+if [ $response == "p" ]
 then
     ln -s $HOME/server-config/bash/.bashrc_prod $HOME/.bashrc
 else
-if [ $reponse == "r" ]
+if [ $response == "r" ]
 then
     ln -s $HOME/server-config/bash/.bashrc_recette $HOME/.bashrc
 fi
