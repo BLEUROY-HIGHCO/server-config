@@ -8,8 +8,8 @@
 	path = .vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule ".vim/bundle/ragtag"]
-	path = .vim/bundle/ragtag
-	url = https://github.com/tpope/vim-ragtag
+    path = .vim/bundle/ragtag
+    url = https://github.com/tpope/vim-ragtag
 [submodule ".vim/bundle/snipMate"]
 	path = .vim/bundle/snipMate
 	url = https://github.com/msanders/snipmate.vim.git
