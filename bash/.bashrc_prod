@@ -1,3 +1,4 @@
-MACHINE_ENV="\[\033[1;31m\][PROD]\[\033[0m\]";
 
+MACHINE_ENV="\[\033[1;31m\][PROD]\[\033[0m\]";
 source $HOME/server-config/bash/.bashrc_base
+

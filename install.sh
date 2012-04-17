@@ -46,7 +46,7 @@ fi
 
 echo -e "\033[0;34mCloning Vim config\033[0m"
 
-/usr/bin/env git clone https://github.com/BLEUROY-HIGHCO/server-config.git $HOME/server-config
+/usr/bin/env git clone git@github.com:BLEUROY-HIGHCO/server-config.git $HOME/server-config
 
 echo -e "\033[0;34mUpdate submodules\033[0m"
 
@@ -88,7 +88,8 @@ echo -e "\033[0;32m"'     \/  /_____/      \/     \/             \/     \/     \
 
 echo -e "\n\n \033[0;32m BASH ...is now installed.\033[0m"
 
-source $HOME/.bashrc
+source $HOME/.bashrc \
+bash
 
 echo "\n\n \033[0;32m WAIT FOR VIM ....LAUNCH !\033[0m"
 
