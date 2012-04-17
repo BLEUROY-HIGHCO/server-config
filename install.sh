@@ -52,8 +52,8 @@ echo -e "\033[0;34mUpdate submodules\033[0m"
 
 cd $HOME/server-config
 
-ln -s $HOME/server-config/.vim $HOME/.vim
-ln -s $HOME/server-config/.vimrc $HOME/.vimrc
+mv $HOME/server-config/.vim $HOME/.vim
+mv $HOME/server-config/.vimrc $HOME/.vimrc
 
 echo "\033[0;34mInstalling vundle \033[0m"
 mkdir $HOME/.vim/bundle
@@ -71,13 +71,15 @@ echo -e "\n\n \033[0;32m....is now installed.\033[0m"
 echo 'Prod ou recette (p/r)' && read response && \
 if [ "$response" == "p" ]
 then
-    ln -s $HOME/server-config/bash/.bashrc_prod $HOME/.bashrc
+    mv $HOME/server-config/bash/.bashrc_prod $HOME/.bashrc
 else
 if [ "$response" == "r" ]
 then
-    ln -s $HOME/server-config/bash/.bashrc_recette $HOME/.bashrc
+    mv $HOME/server-config/bash/.bashrc_recette $HOME/.bashrc
 fi
 fi
+
+rm -rf $HOME/server-config
 
 echo -e "\033[0;32m"'.__    .__       .__                   ___.                 .__      '"\033[0m"
 echo -e "\033[0;32m"'|  |__ |__| ____ |  |__   ____  ____   \_ |__ _____    _____|  |__   '"\033[0m"
