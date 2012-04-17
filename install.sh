@@ -1,42 +1,45 @@
+today=`date +%Y%m%d`
 if [ -d $HOME/.vim ] || [ -h $HOME/.vim ]
 then
-    echo '.vim file already exists, delete it ? (y/n)' && read response && \
+    echo '.vim file already exists, backup it ? (y/n)' && read response && \
     if [ "$response" == "y" ]
     then
-        rm -rf $HOME/.vim
+        mv $HOME/.vim $HOME/.vim.$today
     else
-        exit
+        rm -rf $HOME/.vim
     fi
 fi
 
 if [ -f $HOME/.vimrc ] || [ -h $HOME/.vimrc ]
 then
-    echo '.vimrc file already exists, delete it ? (y/n)' && read response && \
+    echo '.vimrc file already exists, backup it ? (y/n)' && read response && \
     if [ "$response" == "y" ]
     then
-        rm $HOME/.vimrc
+        mv $HOME/.vimrc $HOME/.vimrc.$today
     else
-        exit
+        rm $HOME/.vimrc
     fi
 fi
 
 if [ -f $HOME/.bashrc ] || [ -h $HOME/.bashrc ]
 then
-    echo '.bashrc file already exists, delete it ? (y/n)' && read response && \
+    echo '.bashrc file already exists, backup it ? (y/n)' && read response && \
     if [ "$response" == "y" ]
     then
+        mv $HOME/.bashrc $HOME/.bashrc.$today
+    else
         rm $HOME/.bashrc
     fi
 fi
 
 if [ -d $HOME/server-config ]
 then
-    echo 'server-config file already exists, delete it ? (y/n)' && read response && \
+    echo 'server-config file already exists, backup it ? (y/n)' && read response && \
     if [ "$response" == "y" ]
     then
-        rm -rf $HOME/server-config
+        mv $HOME/server-config $HOME/server-config.$today
     else
-        exit
+        rm -rf $HOME/server-config
     fi
 fi
 
@@ -48,11 +51,13 @@ echo -e "\033[0;34mCloning Vim config\033[0m"
 echo -e "\033[0;34mUpdate submodules\033[0m"
 
 cd $HOME/server-config
-git submodule init
-git submodule update
 
 ln -s $HOME/server-config/.vim $HOME/.vim
-ln -s $HOME/.vim/.vimrc $HOME/.vimrc
+ln -s $HOME/server-config/.vimrc $HOME/.vimrc
+
+echo "\033[0;34mInstalling vundle \033[0m"
+mkdir $HOME/.vim/bundle
+git clone http://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
 
 echo -e "\033[0;32m"'.__    .__       .__                         .__          '"\033[0m"
 echo -e "\033[0;32m"'|  |__ |__| ____ |  |__   ____  ____   ___  _|__| _____   '"\033[0m"
@@ -84,3 +89,7 @@ echo -e "\033[0;32m"'     \/  /_____/      \/     \/             \/     \/     \
 echo -e "\n\n \033[0;32m BASH ...is now installed.\033[0m"
 
 source $HOME/.bashrc
+
+echo "\n\n \033[0;32m WAIT FOR VIM ....LAUNCH !\033[0m"
+
+vim +BundleInstall
