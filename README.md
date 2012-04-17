@@ -2,16 +2,20 @@ Highco Server config
 ====================
 
 For vim, look at [stephpy-vim-config](https://github.com/stephpy/vim-config), this is the same config, without:
+
 - ACK bundle, which needs ack to be installed
 - phpcs bundle, which needs PhpCodeSniffer to be installed
 - taglist bundle, which needs Exhuberant Ctags to be installed
 
 ## Config useful
 
-    let g:pdv_cfg_Author="Stephane PY <py.stephane1(at)gmail.com>" " change the authorname for phpdoc
-    let g:NERDTreeShowHidden=1                                     " show hidden files on nerdtree
+```viml
+let g:pdv_cfg_Author="Stephane PY <py.stephane1(at)gmail.com>" " change the authorname for phpdoc
+let g:NERDTreeShowHidden=1                                     " show hidden files on nerdtree
 
-    coloscheme molokai
+coloscheme molokai
+````    
+
 
 ##Shortcuts:
 
