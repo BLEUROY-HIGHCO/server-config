@@ -41,7 +41,6 @@ Bundle 'tsaleh/vim-align'
 Bundle 'vim-scripts/comment.vim'
 Bundle 'vim-scripts/keepcase.vim'
 Bundle 'vim-scripts/sessionman.vim'
-Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/tlib'
 
 " ===================================

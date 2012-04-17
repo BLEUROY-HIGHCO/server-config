@@ -4,6 +4,7 @@ Highco Server config
 For vim, look at [stephpy-vim-config](https://github.com/stephpy/vim-config), this is the same config, without:
 - ACK bundle, which needs ack to be installed
 - phpcs bundle, which needs PhpCodeSniffer to be installed
+- taglist bundle, which needs Exhuberant Ctags to be installed
 
 ## Config useful
 
@@ -28,14 +29,6 @@ For vim, look at [stephpy-vim-config](https://github.com/stephpy/vim-config), th
 
 # To install
 
-    One Shot:
-
-    wget --no-check-certificate https://raw.github.com/BLEUROY-HIGHCO/server-config/master/install.sh -O ./install.sh && chmod +x ./install.sh && ./install.sh
-
-    Or
-
-    git clone git://github.com/BLEUROY-HIGHCO/server-config.git
-    cd server-config && git submodule init && git submodule update
-    ln -s server-config/.vim ~/.vim
-    ln -s server-config/.vim/.vimrc ~/.vimrc
-    ln -s server-config/bash/.bashrc_**recette or prod** ~/.bashrc
+````shell
+wget --no-check-certificate https://raw.github.com/BLEUROY-HIGHCO/server-config/master/install.sh -O ./install.sh && chmod +x ./install.sh && ./install.sh
+````
