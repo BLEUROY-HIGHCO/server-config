@@ -14,6 +14,7 @@ call vundle#rc()
 Bundle 'JDeuce/jinja-syntax'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'beyondwords/vim-twig'
 Bundle 'corntrace/bufexplorer'
@@ -22,11 +23,20 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'gmarik/vundle'
 Bundle 'hallison/vim-markdown'
 Bundle 'kien/ctrlp.vim'
-Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'mattn/zencoding-vim'
 Bundle 'michaeljsmith/vim-indent-object'
+
+if executable('ack')
+    Bundle 'mileszs/ack.vim'
+endif
+
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
+
+if executable('phpcs')
+    Bundle 'stephpy/phpcs.vim'
+endif
+
 Bundle 'stephpy/vim-phpdoc'
 Bundle 'stephpy/vim-symfony'
 Bundle 'taq/vim-rspec'
@@ -41,6 +51,11 @@ Bundle 'tsaleh/vim-align'
 Bundle 'vim-scripts/comment.vim'
 Bundle 'vim-scripts/keepcase.vim'
 Bundle 'vim-scripts/sessionman.vim'
+
+if executable('ctags')
+    Bundle 'vim-scripts/taglist.vim'
+endif
+
 Bundle 'vim-scripts/tlib'
 
 " ===================================

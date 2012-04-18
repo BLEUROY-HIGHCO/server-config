@@ -1,11 +1,11 @@
 Highco Server config
 ====================
 
-For vim, look at [stephpy-vim-config](https://github.com/stephpy/vim-config), this is the same config, without:
+For vim, look at [stephpy-vim-config](https://github.com/stephpy/vim-config), this is the same config, but some bundle needs extra binary to works:
 
-- ACK bundle, which needs ack to be installed
-- phpcs bundle, which needs PhpCodeSniffer to be installed
-- taglist bundle, which needs Exhuberant Ctags to be installed
+- ACK -> needs ackbetterthangrep
+- phpcs -> needs php code sniffer
+- taglist -> needs exhuberant ctags
 
 ## Config useful
 
@@ -14,7 +14,7 @@ let g:pdv_cfg_Author="Stephane PY <py.stephane1(at)gmail.com>" " change the auth
 let g:NERDTreeShowHidden=1                                     " show hidden files on nerdtree
 
 coloscheme molokai
-````    
+````
 
 
 ##Shortcuts:
