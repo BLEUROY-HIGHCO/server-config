@@ -33,11 +33,11 @@ endif
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 
-if executable('phpcs')
-    Bundle 'stephpy/phpcs.vim'
+Bundle 'stephpy/vim-phpdoc'
+if has('signs')
+    Bundle 'stephpy/vim-phpqa'
 endif
 
-Bundle 'stephpy/vim-phpdoc'
 Bundle 'stephpy/vim-symfony'
 Bundle 'taq/vim-rspec'
 Bundle 'tomtom/checksyntax_vim'
@@ -48,7 +48,9 @@ Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-align'
+Bundle 'vim-scripts/Auto-Pairs'
 Bundle 'vim-scripts/comment.vim'
+Bundle 'vim-scripts/HTML-AutoCloseTag'
 Bundle 'vim-scripts/keepcase.vim'
 Bundle 'vim-scripts/sessionman.vim'
 
@@ -117,12 +119,38 @@ let g:pdv_cfg_php4always=0 "using php5 doc tags
 let g:ctrlp_match_window_reversed=0
 let g:ctrlp_working_path_mode = 0
 
-" ignore for ctrlp these dir,files
-set wildignore+=*/cache/*,*/logs/*,*.swp
-set wildignore+=*/.git/*,*/.svn/*,
-set wildignore+=*.jpg,*.png,*.gif
+let g:symfony_enable_shell_mapping = 1
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$\|log$',
+  \ 'file': '\.exe$\|\.so$\|\.dll$\|\.jpg$\|\.gif$\|\.png$',
+  \ }
 
 set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
+
+" phpqa
+let g:phpqa_codesniffer_args = "--standard=Symfony2"
+" Don't run messdetector on save (default = 1)
+let g:phpqa_messdetector_autorun = 0
+" Don't run codesniffer on save (default = 1)
+let g:phpqa_codesniffer_autorun = 0
+" Define by default all rulesets (given in vim-config)
+let g:phpqa_messdetector_ruleset = "~/.vim/vendor/phpmd_rulesets.xml"
+
+" you can override it if you want a fileexplorer
+" by default when opening vim on dir
+if !exists("g:file_exporer_at_startup")
+    let g:NERDTreeHijackNetrw=0
+
+    " use 'vim' in your directory and it'll open a nerdtree automatically
+    autocmd vimenter * if !argc() || argv() == ['.'] | NERDTree | endif
+
+    " Disable netrw's autocmd, since we're ALWAYS using NERDTree
+    runtime plugin/netRwPlugin.vim
+    augroup FileExplorer
+      au!
+    augroup END
+endif
 
 " ===================================
 " Mapping
