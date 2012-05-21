@@ -11,11 +11,7 @@ filetype indent on        " enable loading indent file for filetype
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
-Bundle 'JDeuce/jinja-syntax'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'beyondwords/vim-twig'
 Bundle 'corntrace/bufexplorer'
 Bundle 'ervandew/supertab'
@@ -29,9 +25,6 @@ else
     Bundle 'kien/ctrlp.vim'
 endif
 
-Bundle 'mattn/zencoding-vim'
-Bundle 'michaeljsmith/vim-indent-object'
-
 if executable('ack')
     Bundle 'mileszs/ack.vim'
 endif
@@ -39,25 +32,25 @@ endif
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 
+Bundle 'stephpy/vim-powerline'
 Bundle 'stephpy/vim-phpdoc'
-if has('signs')
-    Bundle 'stephpy/vim-phpqa'
+Bundle 'stephpy/vim-phpqa'
+
+Bundle 'stephpy/vim-php-cs-fixer'
+Bundle 'stephpy/vim-symfony'
+Bundle 'stephpy/snipmate-snippets'
+
+if executable('instant-markdown-d')
+    Bundle 'suan/vim-instant-markdown'
 endif
 
-Bundle 'stephpy/vim-symfony'
-Bundle 'taq/vim-rspec'
-Bundle 'tomtom/checksyntax_vim'
 Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-align'
 Bundle 'vim-scripts/Auto-Pairs'
-Bundle 'vim-scripts/comment.vim'
+Bundle 'vim-scripts/comments.vim'
 Bundle 'vim-scripts/HTML-AutoCloseTag'
-Bundle 'vim-scripts/keepcase.vim'
 Bundle 'vim-scripts/sessionman.vim'
 
 if executable('ctags')
@@ -74,6 +67,7 @@ set cursorline
 set encoding=utf-8
 
 set nocompatible
+set laststatus=2               " Always show the statusline
 set nobackup                   " delete backup
 set noswapfile
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
@@ -113,15 +107,17 @@ autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufRead * silent! %s/[\r \t]\+$//
 autocmd BufEnter *.php :%s/[ \t\r]\+$//e
 autocmd BufEnter *.php :retab
-au BufRead,BufNewFile *.twig set ft=twig syntax=htmljinja
+
+autocmd BufNewFile,BufRead *.twig set filetype=twig
+autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
+
 " Run php code sniffer and php mess detector
-autocmd FileType php map <C-K> :Phpcs<CR>
+autocmd FileType php map <C-K> :call phpqa#PhpQaTools(1,1)<CR>
 
 " ===================================
 " Bundles configuration
 " ===================================
 
-let g:ragtag_global_maps = 1
 let g:pdv_cfg_php4always=0 "using php5 doc tags
 
 if has('ruby')
@@ -181,12 +177,10 @@ map <C-f> :Ack
 " Insert current namespace and opens php and create empty class, based on the file name
 nmap <C-h> ggO<?php<CR><CR><ESC>"%PdF/r;:s#/#\\#g<CR>Inamespace  <ESC>d/[A-Z]<CR>Goclass <C-R>=expand("%:t:r")<CR><CR>{<CR>
 
-inoremap <C-D> <ESC>:call PhpDocSingle()<CR>
-nnoremap <C-D> :call PhpDocSingle()<CR>
+" This will align params by using align vim bundle
+nmap <C-D> :call PhpDocSingle()<CR><ESC>jv/\/<CR>kkk\tsp<CR>
 vnoremap <C-D> :call PhpDocRange()<CR>
 
-" Use local vimrc if available {
 if filereadable(expand("~/.vimrc.local"))
     source ~/.vimrc.local
 endif
-" }
