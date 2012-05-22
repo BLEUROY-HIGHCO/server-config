@@ -30,20 +30,13 @@ if executable('ack') || executable('ack-grep')
 endif
 
 Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
 
 Bundle 'stephpy/vim-powerline'
 Bundle 'stephpy/vim-phpdoc'
-Bundle 'stephpy/vim-phpqa'
 
 Bundle 'stephpy/vim-php-cs-fixer'
 Bundle 'stephpy/vim-symfony'
 Bundle 'stephpy/snipmate-snippets'
-
-if executable('instant-markdown-d')
-    Bundle 'suan/vim-instant-markdown'
-endif
-
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
