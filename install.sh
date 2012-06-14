@@ -93,4 +93,4 @@ bash
 
 echo "\n\n \033[0;32m WAIT FOR VIM ....LAUNCH !\033[0m"
 
-vim +BundleInstall
+vim +BundleInstall +qa
